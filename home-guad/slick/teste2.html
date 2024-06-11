@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #3a2101;
+}
+
+header,
+ul,
+a {
+    /* Inicio nav */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    list-style: none;
+    color: rgb(129, 128, 126);
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+header {
+    height: 100px;
+    position: fixed;
+    top: 0;
+}
+
+#remove-sublime {
+    text-decoration: none;
+    /* tirando sublimi do a href */
+}
+
+
+
+#span-two-nav-contato {
+    /* Ajuste do  Span de contato   */
+    color: white;
+    background-color: #fbff00;
+    border-radius: 30px;
+    height: 35px;
+    width: 145px;
+    margin-bottom: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-decoration: none;
+}
+
+#img-logo-cerveja {
+    /*  tamanho do logo IMG*/
+    height: 70px;
+    border-radius: 100%;
+    width: auto;
+    border:  2px solid yellow;
+}
+
+/* Sessão de hovers*/
+#img-logo-cerveja:hover {
+    transform: rotate(25deg)
+}
+
+#span-two-nav-contato:hover {
+    transform: scale(1.1);
+}
+
+#remove-sublime:hover {
+    color: #eeff00fa;
+    transform: scale(1.2)
+}
+
+/* Final hedear */
+
+
+/* slides */
+.slick-prev,
+.slick-next {
+    z-index: hidden;
+}
+
+.slick-prev {
+    left: 25px;
+    z-index: 1;
+
+}
+
+.slick-next {
+    right: 25px;
+
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-size: 30px;
+}
+
+.blo {
+    height: 150px;
+    width: 150px;
+    background: #fbff00;
+    margin: 150px;
+}
+
+.slick-track {
+    top: 0;
+    margin-top: 100px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    width: 100%;
+}
+
+    /* Final hedear */
+    /* pra cima*/
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        margin-left: 300px;
+    }
+
+    .menu-toggle .bar {
+        height: 3px;
+        width: 25px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 84px;
+            left: 0;
+            background-color: #000000;
+            width: 100%;
+            position: fixed;
+
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        #span-two-nav-contato{
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <span>
+            <a  href="#me"> <img id="img-logo-cerveja"
+                    src="/imglogo/91996e45e713f157d782037d94ddd3ca.jpg" alt=""></a>
+        </span>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a id="remove-sublime" href="#me"> Home </li></a>
+                <li><a id="remove-sublime" href=" #me"> O Grupo </li></a>
+                <li><a id="remove-sublime" href=" #me"> Atuação </li></a>
+                <li><a id="remove-sublime" href=" #me"> Produtos </li></a>
+                <li><a id="remove-sublime" href=" #me"> Contatos </li></a>
+            </ul>
+            </div>
+        </nav>
+        <span>
+            <a id="span-two-nav-contato" href="#me"><i class="fa-solid fa-phone fa-ig" style="color: #070707;"> | ( 13 )
+                    3321-7933</i></a>
+        </span>
+    </header>
+  <script>
+
+const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        }); 
+
+  </script>
+</body>
+
+</html>
